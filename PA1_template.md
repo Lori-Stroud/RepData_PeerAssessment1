@@ -14,7 +14,7 @@ data <- read.csv("activity.csv")
 steps_by_day <- aggregate(steps ~ date, data, sum)
 hist(steps_by_day$steps, main = paste("Total Steps Each Day"), col="blue", xlab="Number of Steps")
 ```
-![plot of Plot1](figure/Rplot1.png) 
+![plot of Plot1](Rplot1.png) 
 
 ```r
 mean(steps_by_day$steps)
@@ -38,7 +38,7 @@ steps_by_interval <- aggregate(steps ~ interval, data, mean)
 plot(steps_by_interval$interval,steps_by_interval$steps, type="l", xlab="Interval", ylab="Number of Steps",main="Average Number of Steps per Day by Interval")
 ```
 
-![plot of Plot2](figure/Rplot2.png)
+![plot of Plot2](Rplot2.png)
 
 On average across all the days in the dataset, the 5-minute interval contains
 the maximum number of steps?
@@ -78,7 +78,7 @@ fill_steps_per_day <- aggregate(steps ~ date, imputed_data, sum)
 hist(fill_steps_per_day$steps, main = paste("Total Steps Each Day"), col="blue", xlab="Number of Steps")
 ```
 
-![plot of Plot3](figure/Rplot3.png)
+![plot of Plot3](Rplot3.png)
 
 * Calculate new mean and median for imputed data.
 ```{r}
@@ -123,4 +123,4 @@ library(lattice)
 
 xyplot(steps_by_interval_i$steps ~ steps_by_interval_i$interval|steps_by_interval_i$dow, main="Average Steps per Day by Interval",xlab="Interval", ylab="Steps",layout=c(1,2), type="l")
 ```
-![plot of Plot4](figure/Rplot4.png)
+![plot of Plot4](Rplot4.png)
